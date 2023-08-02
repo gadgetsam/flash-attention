@@ -8,7 +8,7 @@ from einops import rearrange, repeat
 
 # from flash_attn.utils.benchmark import benchmark_forward, benchmark_backward, benchmark_combined, benchmark_all, benchmark_fwd_bwd, pytorch_profiler
 from src.utils.benchmark import benchmark_forward, benchmark_backward, benchmark_combined, benchmark_all, benchmark_fwd_bwd, pytorch_profiler
-from flash_attn.flash_attn_interface import flash_attn_varlen_qkvpacked_func
+from flash_attn2.flash_attn_interface import flash_attn_varlen_qkvpacked_func
 # # from flash_attn.triton.fused_attention import attention as attention
 # from flash_attn.flash_attn_triton import flash_attn_qkvpacked_func
 # from flash_attn.flash_attn_triton_og import attention as attention_og
@@ -23,7 +23,7 @@ except ImportError:
     fav2_kvpacked_func = None
 
 try:
-    from flash_attn.fused_softmax import scaled_upper_triang_masked_softmax
+    from flash_attn2.fused_softmax import scaled_upper_triang_masked_softmax
 except ImportError:
     scaled_upper_triang_masked_softmax = None
 

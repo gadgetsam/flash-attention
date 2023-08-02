@@ -13,8 +13,8 @@ from transformers.models.gpt_neox.modeling_gpt_neox import apply_rotary_pos_emb 
 from transformers.models.gptj.modeling_gptj import fixed_pos_embedding
 from transformers.models.gptj.modeling_gptj import apply_rotary_pos_emb as apply_rotary_pos_emb_gptj
 
-from flash_attn.layers.rotary import apply_rotary_emb_func, apply_rotary_emb_qkv_
-from flash_attn.layers.rotary import RotaryEmbedding
+from flash_attn2.layers.rotary import apply_rotary_emb_func, apply_rotary_emb_qkv_
+from flash_attn2.layers.rotary import RotaryEmbedding
 
 
 # NeoX-style rotary embedding
