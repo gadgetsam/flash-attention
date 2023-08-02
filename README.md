@@ -77,7 +77,7 @@ FlashAttention-2 currently supports:
 The main functions implement scaled dot product attention (softmax(Q @ K^T *
 softmax_scale) @ V):
 ```python
-from flash_attn import flash_attn_qkvpacked_func, flash_attn_func
+from flash_attn2 import flash_attn_qkvpacked_func, flash_attn_func
 ```
 
 ```python

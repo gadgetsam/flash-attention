@@ -7,11 +7,11 @@ import pytest
 
 from einops import rearrange, repeat
 
-from flash_attn import flash_attn_func, flash_attn_kvpacked_func, flash_attn_qkvpacked_func
-from flash_attn import flash_attn_varlen_qkvpacked_func, flash_attn_varlen_kvpacked_func
-from flash_attn import flash_attn_varlen_func
-from flash_attn.flash_attn_interface import _get_block_size
-from flash_attn.bert_padding import unpad_input, pad_input, index_first_axis
+from flash_attn2 import flash_attn_func, flash_attn_kvpacked_func, flash_attn_qkvpacked_func
+from flash_attn2 import flash_attn_varlen_qkvpacked_func, flash_attn_varlen_kvpacked_func
+from flash_attn2 import flash_attn_varlen_func
+from flash_attn2.flash_attn_interface import _get_block_size
+from flash_attn2.bert_padding import unpad_input, pad_input, index_first_axis
 
 
 MAX_HEADDIM_SM8x = 192

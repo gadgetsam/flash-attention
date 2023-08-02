@@ -105,7 +105,7 @@ torch_dir = torch.__path__[0]
 if os.path.exists(os.path.join(torch_dir, "include", "ATen", "CUDAGeneratorImpl.h")):
     generator_flag = ["-DOLD_GENERATOR_PATH"]
 
-raise_if_cuda_home_none("flash_attn")
+raise_if_cuda_home_none("flash_attn2")
 # Check, if CUDA11 is installed for compute capability 8.0
 cc_flag = []
 _, bare_metal_version = get_cuda_bare_metal_version(CUDA_HOME)
@@ -189,7 +189,7 @@ ext_modules.append(
 
 
 def get_package_version():
-    with open(Path(this_dir) / "flash_attn" / "__init__.py", "r") as f:
+    with open(Path(this_dir) / "flash_attn2" / "__init__.py", "r") as f:
         version_match = re.search(r"^__version__\s*=\s*(.*)$", f.read(), re.MULTILINE)
     public_version = ast.literal_eval(version_match.group(1))
     local_version = os.environ.get("FLASH_ATTN_LOCAL_VERSION")
@@ -200,7 +200,7 @@ def get_package_version():
 
 
 setup(
-    name="flash_attn",
+    name="flash_attn2",
     version=get_package_version(),
     packages=find_packages(
         exclude=("build", "csrc", "include", "tests", "dist", "docs", "benchmarks", "flash_attn.egg-info",)

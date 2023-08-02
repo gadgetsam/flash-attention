@@ -10,26 +10,26 @@ from torch import Tensor
 
 from torchvision.ops import StochasticDepth
 
-from flash_attn.modules.mha import MHA
-from flash_attn.modules.mlp import Mlp
+from flash_attn2.modules.mha import MHA
+from flash_attn2.modules.mlp import Mlp
 
 try:
-    from flash_attn.ops.layer_norm import dropout_add_layer_norm
+    from flash_attn2.ops.layer_norm import dropout_add_layer_norm
 except ImportError:
     dropout_add_layer_norm = None
 
 try:
-    from flash_attn.ops.layer_norm import dropout_add_layer_norm_parallel_residual
+    from flash_attn2.ops.layer_norm import dropout_add_layer_norm_parallel_residual
 except ImportError:
     dropout_add_layer_norm_parallel_residual = None
 
 try:
-    from flash_attn.ops.rms_norm import RMSNorm, dropout_add_rms_norm
+    from flash_attn2.ops.rms_norm import RMSNorm, dropout_add_rms_norm
 except ImportError:
     RMSNorm, dropout_add_rms_norm = None, None
 
 try:
-    from flash_attn.ops.rms_norm import dropout_add_rms_norm_parallel_residual
+    from flash_attn2.ops.rms_norm import dropout_add_rms_norm_parallel_residual
 except ImportError:
     dropout_add_rms_norm_parallel_residual = None
 

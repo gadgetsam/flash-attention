@@ -6,12 +6,12 @@ import torch.nn.functional as F
 from torch.distributed import ProcessGroup
 
 try:
-    from flash_attn.ops.fused_dense import ColumnParallelLinear, RowParallelLinear
+    from flash_attn2.ops.fused_dense import ColumnParallelLinear, RowParallelLinear
 except ImportError:
     ColumnParallelLinear, RowParallelLinear = None, None
 
 try:
-    from flash_attn.ops.fused_dense import FusedMLP, ParallelFusedMLP
+    from flash_attn2.ops.fused_dense import FusedMLP, ParallelFusedMLP
 except ImportError:
     FusedMLP, ParallelFusedMLP = None, None
 

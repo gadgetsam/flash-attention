@@ -7,8 +7,8 @@ from torch.cuda.amp import custom_bwd, custom_fwd
 
 import fused_dense_lib as fused_dense_cuda
 
-from flash_attn.ops.triton.linear import triton_linear_act, triton_dgrad_act
-from flash_attn.ops.activations import sqrelu_fwd, sqrelu_bwd
+from flash_attn2.ops.triton.linear import triton_linear_act, triton_dgrad_act
+from flash_attn2.ops.activations import sqrelu_fwd, sqrelu_bwd
 
 
 class FusedDenseSqreluDenseFunc(torch.autograd.Function):

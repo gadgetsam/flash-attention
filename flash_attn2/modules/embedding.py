@@ -6,7 +6,7 @@ from torch import Tensor
 
 from einops import rearrange
 
-from flash_attn.utils.distributed import reduce_scatter, all_reduce
+from flash_attn2.utils.distributed import reduce_scatter, all_reduce
 
 
 class GPT2Embeddings(nn.Module):

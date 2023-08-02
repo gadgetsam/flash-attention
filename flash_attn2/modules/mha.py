@@ -10,19 +10,19 @@ import torch.nn.functional as F
 from einops import rearrange, repeat
 
 try:
-    from flash_attn import flash_attn_varlen_qkvpacked_func, flash_attn_varlen_kvpacked_func
-    from flash_attn import flash_attn_qkvpacked_func, flash_attn_kvpacked_func
+    from flash_attn2 import flash_attn_varlen_qkvpacked_func, flash_attn_varlen_kvpacked_func
+    from flash_attn2 import flash_attn_qkvpacked_func, flash_attn_kvpacked_func
 except ImportError:
     flash_attn_varlen_qkvpacked_func, flash_attn_varlen_kvpacked_func = None, None
     flash_attn_qkvpacked_func, flash_attn_kvpacked_func = None, None
 
 try:
-    from flash_attn.ops.fused_dense import FusedDense, ColumnParallelLinear, RowParallelLinear
+    from flash_attn2.ops.fused_dense import FusedDense, ColumnParallelLinear, RowParallelLinear
 except ImportError:
     FusedDense, ColumnParallelLinear, RowParallelLinear = None, None, None
 
 try:
-    from flash_attn.layers.rotary import RotaryEmbedding
+    from flash_attn2.layers.rotary import RotaryEmbedding
 except ImportError:
     RotaryEmbedding = None
 
